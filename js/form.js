@@ -35,33 +35,24 @@ function validarOcurrencia()
 function validaHoraSalida()
 {
 	var isvalid=false;
-	if($('#horaSalida').val()>9 && $('#horaSalida').val()<19)
-   {
+	var horaSalida = $('#horaSalida').val();
+	var horaSa = horaSalida.split(":");//20,59 horas, minuts
+	if(horaSa[0] >=0 && horaSa[0] <=23 && horaSa[1] >=0 && horaSa[1] <=59)
+    {
    		isvalid=true;
-   }
-   return  isvalid;
+    }
+  	return isvalid;
 }
 function validaHoraRetorno()
 {
-	var isvalid=false;
-	if($('#horaRetorno').val()>9 && $('#horaRetorno').val()<19)
-   {
+    var isvalid=false;
+	var horaRetorno = $('#horaRetorno').val();
+	var horaRe = horaRetorno.split(":");//20,59 horas, minuts
+	if(horaRe[0] >=0 && horaRe[0] <=23 && horaRe[1] >=0 && horaRe[1] <=59)
+    {
    		isvalid=true;
-   }
-   return  isvalid;
-}
-
-function validaHoras()
-{
-	var isvalid=false;
-	if(validaHoraRetorno() && validaHoraSalida() )
-	{
-		if($('#horaSalida').val() < $('#horaRetorno').val())
-	    {
-	   		isvalid=true;
-	    }
-	}
-   	return  isvalid;
+    }
+  	return isvalid;
 }
 function motivodesc()
 {
@@ -78,10 +69,14 @@ function motivodesc()
 
 function validaFormulario()
 {
-	console.log(validarOcurrencia(),validaHoraSalida(),validaHoraRetorno(),validaHoras(),motivodesc());
-	if(validarOcurrencia() && validaHoraSalida() && validaHoraRetorno() && validaHoras() &&  motivodesc())
+	console.log(validarOcurrencia());
+	console.log(validaHoraSalida());
+	console.log(validaHoraRetorno());
+	console.log(motivodesc());
+	console.log(validarFechaMenorActual());
+
+	if(validarOcurrencia() && validaHoraSalida() && validaHoraRetorno() &&  motivodesc() && validarFechaMenorActual())
 	{
-		window.location='tabla-usuario.html';
 		swal({
 	      title: "¡Correcto!",
 	      text: "Fomulario correctamente lleno",
@@ -103,4 +98,19 @@ function validaFormulario()
 	}
 }
 
+function validarFechaMenorActual()
+{
+	var salida = $('#fechaSalida').val();
+	var retorno = $('#fechaRetorno').val();
+  	var fechaSalida = salida.split("-");//año mes dia 2017,03,12
+  	var fechaRetorno = retorno.split("-");//año mes dia
+  	var isValid=false; 
+  	
+  	if(fechaSalida[0] <= fechaRetorno[0] && fechaSalida[1] <= fechaRetorno[1] && fechaSalida[2] <= fechaRetorno[2])
+  	{
+  		isValid=true;
+  	}
+
+	return isValid;
+}
 
