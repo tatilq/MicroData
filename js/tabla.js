@@ -1,5 +1,9 @@
 
-$( document ).ready(function() {
+$( document ).ready(init);
+
+
+function init()
+ {
     var datos ;
     
     datos = JSON.parse(localStorage.getItem('ocurrenciaslist'));
@@ -10,10 +14,12 @@ $( document ).ready(function() {
         $( ".conte" ).empty();
         var datos_t = "";
         for (var i = 0 ; i < datoss.length ; i++) {
-            datos_t += "<tr><td>"+datoss[i].fecha+"</td><td>"+datoss[i].tipo+"</td><td>"+datoss[i].estado+"</td><td><button>Ver detalles</button></td></tr>";
+            datos_t += "<tr><td>"+datoss[i].fecha+"</td><td>"+datoss[i].tipo+"</td><td>"+datoss[i].estado+"</td><td><button class='verDetalles'>Ver detalles</button></td></tr>";
         }
         $('.conte').append(datos_t);
         datos_t="";
+
+        $('.verDetalles').on('click',verDetalles);
     }
 
     var sort_by = function(field, reverse, primer)
@@ -49,5 +55,18 @@ $( document ).ready(function() {
         //console.log(datos);
     });
     
-});
-    
+}
+/********************FUNCIOM QUE MUESTRA LOS DETALLES DE CADA USUARIO***********************/    
+function verDetalles()
+{
+
+   /* var consumo= $(this).find('.litros').text();
+    var ruta= $(this).find('.car').attr('src');
+    var pasajero=$(this).find('.pasajero').text();
+    localStorage.setItem('consumo',consumo);
+    localStorage.setItem('pasajero',pasajero);
+    localStorage.setItem('ruta',ruta);
+*/
+}
+
+   
