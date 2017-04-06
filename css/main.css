@@ -1,59 +1,64 @@
-header {
-    background-color: #005a91L;
-}
-
-header a {
-    //font-size:12px;
-}
-
-.navbar-header {
-  height: 130px;
-    
-}
-
-.navbar-brand{
-    position: absolute;
-    left: 20px;
-    width: 100%;
-} 
-
-.logo {
-    height: 50px;
-    margin: 10px auto;
-    width: 27%;
-    max-width: 180px;
-    margin-left: 105px;
-    margin-top: 30px;
-    
-}
-
-#user-name {
-    padding-top: 10px;
-}
-.nav, .burger {
-    position: absolute;
-    right: 15px;
-    top: 40px;
-}
-
 header p {
-    color:blue;
+    font-size: 12px;
+        margin: 0 13px;
+}
+header a {
+    text-decoration: none;
 }
 .user-photo {
-	margin:0 auto;
+	margin:0 15px;
     width: 100%;
 }
 
 .user-photo img {
-	width:70px; 
-	height:70px;
-    margin-bottom: 30px;
-    border-radius: 100%;
-    padding: 5px;
-    border: 1px outset #99989D;
+    border-radius: 100%;    
+    width:70px;
+    height:70px;
+}
+
+.img-logo {
+    width:20%;
 }
 
 body {
     overflow: hidden;
 }
 
+.navbar-logo {
+   margin-top: 10px;
+}
+
+.navbar-header {
+   margin-top: 10px;
+}
+.navbar-collapse {
+    position: absolute;
+    top:30px;
+    right: 40px;
+    padding-left: 95px;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        position: relative;
+        padding-bottom: 15px;
+        margin-top: -15px;
+    }
+    
+    .user-photo img {
+        border-radius: 100%;    
+        width:45px;
+        height:45px;
+        margin-right:-10px;
+    }
+    
+    .img-logo {
+    width:33%;
+    }
+    
+    header p {
+    font-size: 10px;
+    margin: 0 10px;
+    }
+
+}
