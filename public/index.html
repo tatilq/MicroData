@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+		  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<title>Server Stalker</title>
+</head>
+<body>
+<div class="container">
+	<h1>Welcome Infidels</h1>
+	<p>Documentación para conexión vía sockets (SDP)</p>
+
+	<h3>Conexión</h3>
+	<p>Para conectarse deberán usar socket.io y apuntar a la url <code>http://services.geekadvice.pe:4000</code></p>
+
+	<h4>Acciones disponibles</h4>
+	<p>Indentificar: Te permite iniciar sesión en el chat:</p>
+	<ul class="list-group">
+
+		<li class="list-group-item"><span class="label label-info">code</span> : identify</li>
+		<li class="list-group-item"><span class="label label-info">method</span> : emit</li>
+		<li class="list-group-item"><span class="label label-info">params</span> : String | Nombre del usuario</li>
+	</ul>
+	<hr>
+	<p>Envíar mensaje: Te permite enviar un mensaje:</p>
+	<ul class="list-group">
+		<li class="list-group-item"><span class="label label-info">code</span> : send</li>
+		<li class="list-group-item"><span class="label label-info">method</span> : emit</li>
+		<li class="list-group-item"><span class="label label-info">params</span> : String | Mensaje</li>
+	</ul>
+	<hr>
+	<p>Listar usuarios: Te muestra todos los usuarios conectados</p>
+	<ul class="list-group">
+		<li class="list-group-item"><span class="label label-info">code</span> : list_users</li>
+		<li class="list-group-item"><span class="label label-info">method</span> : on</li>
+		<li class="list-group-item"><span class="label label-info">params</span> : Array | <code>[{id:"id", name:"name"}]</code></li>
+	</ul>
+	<hr>
+	<p>Nuevo usuario: Te avísa cuando un nuevo usuario se conecta</p>
+	<ul class="list-group">
+		<li class="list-group-item"><span class="label label-info">code</span> : new_user</li>
+		<li class="list-group-item"><span class="label label-info">method</span> : on</li>
+		<li class="list-group-item"><span class="label label-info">params</span> : Object | <code>{id:"id", name:"name"}</code></li>
+	</ul>
+	<hr>
+	<p>Nuevo mensaje: Te avísa cuando recibas un nuevo mensaje</p>
+	<ul class="list-group">
+		<li class="list-group-item"><span class="label label-info">code</span> : new_user</li>
+		<li class="list-group-item"><span class="label label-info">method</span> : on</li>
+		<li class="list-group-item"><span class="label label-info">params</span> : Object | <code>{id:"id", name:"name", message:"mensaje"}</code></li>
+	</ul>
+	<hr>
+</div>
+    <script src="/socket.io/socket.io.js"></script>
+<script>
+	var socket;
+	window.onload = function () {
+		socket = io.connect();
+		socket.on('connect', function () {
+			socket.emit('identify', "Gerson" + Math.random());
+		});
+
+
+		socket.on('list_users', function (_users) {
+			console.log(_users);
+		});
+
+		socket.on('new_user', function (_user) {
+			console.log(_user);
+		});
+
+
+    init();
+	};
+
+	function init() {
+		navigator.geolocation.watchPosition(function (_coord) {
+			console.log(_coord);
+			socket.emit('change_location', {lat: _coord.coords.latitude, lon: _coord.coords.longitude});
+		});
+	}
+</script>
+</body>
+</html>
