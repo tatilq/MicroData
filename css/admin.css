@@ -1,0 +1,9 @@
+#no-more-tables table thead .subtitulo i {
+    padding-left: 10px;
+}
+h2 {
+    padding-right: 10px;
+}
+table {
+   overflow-y: hidden 
+}
