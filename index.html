@@ -13,41 +13,53 @@
 	<title>Chaski</title>
 	
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-default">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed burger" data-toggle="collapse"
-                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    
-                </div>
-                <div class="">
-                        <a class="navbar-brand user-photo text-center" href="#" title="user">
-                            <img src="img/usuario.png" alt="" class="img-circle img-thumbnail img-responsive" id="userPhoto">
-                        </a>
-                        <img src="img/logo.png" alt="" class="logo"><br>
-                        <span class="text-left" id="user-name">¡Bienvenido! <br> Juan Pérez</span>
-                </div>
-                <div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav navbar-right text-center">
-                        <li><a href="#">Solicitud Movimiento Personal</a></li>
-                        <li><a href="#">Historial de Incidencias</a></li>
-                        <li><a href="#">Cerrar Sesión</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-  
+<body>  
     
-	<!--AQUI EL CODIGO-->
-	
+
+    <section>
+       <div class="container"> 
+        <div class="row">
+            <div class="col-md-8  col-md-offset-2">
+                <form action="" id="userform" onsubmit="return false;">
+                    <fieldset>
+                        <h3 class="text-center" id="titu">Solicitud de Movimiento de Personal!</h3>   
+                        <div class="ocurrencia">
+                            <label >Seleccione una ocurrencia:</label>
+                            <select class="form-control"  name='ocurrencia' id="ocurrenciadesc">
+                                <option value="">Seleccione</option>
+                                <option value="1">Comisiones por Servicio</option>
+                                <option value="2">Descanso Médico</option>
+                                <option value="3">Capacitaciones</option>
+                                <option value="4">Falta injustificada (permisos personales)</option>
+                                <option value="5">Permisos Essalud</option>
+                                <option value="6">Vacaciones</option>
+                                <option value="7">Licencia por fallecimiento</option>            
+                            </select>
+                        </div><br>
+                        <div class="salida">
+                            <label for="date">Fecha/Hora Salida:</label>
+                            <input class="form-control" type="date" name="fecha" id="fechaSalida"/>
+                            <input type="" name="" class="form-control" id="horaSalida" placeholder="00:00"/>
+                        </div><br>
+                        <div class="retorno">
+                            <label for="date">Fecha/Hora Retorno:</label>
+                            <input class="form-control" type="date" name="fecha" id="fechaRetorno" />
+                            <input type="" name="" class="form-control" id="horaRetorno" placeholder="00:00"/>
+                        </div><br>
+                        <div class="motivo">
+                            <label for="date">Motivo:</label>
+                            <textarea class="form-control" rows="5"  placeholder="Escribe tu motivo" id="motivodesc"></textarea>
+                        </div><br>
+                        <div class="compensacion">
+                            <input type="checkbox" id="compensacion" name='compensacion'/>
+                            <label for='compensacion' class="inlinelabel">Por compensación de horas</label>
+                        </div><br>
+                        <button id="enviar">Enviar</button> 
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+    </section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>

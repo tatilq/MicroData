@@ -1,59 +1,51 @@
-header {
-    background-color: #005a91L;
+*
+{
+   /* outline: 1px solid red;*/
+  
 }
-
-header a {
-    //font-size:12px;
+form
+{
+	margin-top: 10px;
 }
-
-.navbar-header {
-  height: 130px;
-    
+label,#titu
+{
+	color: white;
 }
-
-.navbar-brand{
-    position: absolute;
-    left: 20px;
-    width: 100%;
-} 
-
-.logo {
-    height: 50px;
-    margin: 10px auto;
-    width: 27%;
-    max-width: 180px;
-    margin-left: 105px;
-    margin-top: 30px;
-    
+.inlinelabel
+{
+	display: inline;
 }
-
-#user-name {
-    padding-top: 10px;
+.salida,.retorno,.motivo,.compensacion
+{
+	margin-bottom: 20px;
+	display: inline;
+	
 }
-.nav, .burger {
-    position: absolute;
-    right: 15px;
-    top: 40px;
-}
-
-header p {
-    color:blue;
-}
-.user-photo {
+#enviar
+{
 	margin:0 auto;
-    width: 100%;
 }
-
-.user-photo img {
-	width:70px; 
-	height:70px;
-    margin-bottom: 30px;
-    border-radius: 100%;
-    padding: 5px;
-    border: 1px outset #99989D;
+#fechaSalida,#fechaRetorno
+{
+	width: 50%;
+	margin-bottom: 5px;
 }
-
-body {
-    overflow: hidden;
+#enviar
+{
+	margin-top: 20px;
+	border: none;
+	color: black;
+	border-radius: 5px;
+	width: 80px;
+	height: 30px;
 }
-
+#horaSalida,#horaRetorno
+{
+	width: 20%;
+}
+#userform
+{
+	background-color: #666D6C;
+	padding: 20px;
+	border-radius: 10px;
+}
