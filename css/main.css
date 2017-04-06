@@ -62,3 +62,12 @@ body {
     }
 
 }
+
+.logo-hero {
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%, -40%);
+    width: 50%;
+    height: auto;
+}
