@@ -1,5 +1,5 @@
 function onLoadFunction(){
     alert("sdsd ");
-    gapi.client.setApiKey('AIzaSyAqja6RVXq5jQwCP3T3c3WXV2CkDpBKzQA');
+    gapi.client.setApiKey('AIzaSyDV_UKx1xCCG_OCTv63ZUdDdbm36au6OAg');
     gapi.client.load('plus','v1',function(){});
 }

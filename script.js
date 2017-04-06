@@ -6,7 +6,7 @@ myApp.controller('myController',['$scope',function($scope){
     };
     $scope.onGoogleLogin=function(){
          var params={
-            'clientid':'694553659817-710frbia93jte6avvss64fc4m8eb1cnb.apps.googleusercontent.com',
+            'clientid':'92693040875-faeh0beehtqcecorgta26rg1fbjtolsf.apps.googleusercontent.com',
             'cookiepolicy':'single_host_origin',
             'callback': function(result){
                 if(result['status']['signed_in']){
