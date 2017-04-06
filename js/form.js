@@ -9,8 +9,9 @@ $( document ).ready(function() {
 	 	var retorno = $('#fechaRetorno').val();
 	 	var motivo = $('#motivodesc').val();
 	 	var compensacion = $('#compensaciondesc').val();
-
-	 	var dats_form = {id: 1,fecha : salida , fecha_retorno : retorno, tipo : ocurrencia, estado : "Solicitado" , motivo: motivo , compensacion : compensacion };
+	 	var f = new Date();
+	 	var fechaActual=f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+	 	var dats_form = {id: 1,fecha : fechaActual , fecha_retorno : retorno, tipo : ocurrencia, estado : "Solicitado" , motivo: motivo , compensacion : compensacion };
 	 	dat.push(dats_form);
 	 	localStorage.setItem('ocurrenciaslist',JSON.stringify(dat));
 	 	window.location='tabla-usuario.html';

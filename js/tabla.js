@@ -16,28 +16,30 @@ $( document ).ready(function() {
         datos_t="";
     }
 
-    var sort_by = function(field, reverse, primer){
+    var sort_by = function(field, reverse, primer)
+    {
        var key = primer ? 
            function(x) {return primer(x[field])} : 
            function(x) {return x[field]};
 
        reverse = !reverse ? 1 : -1;
-
-       return function (a, b) {
-           return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
-         } 
+        return function (a, b) 
+        {
+        return a = key(a), b = key(b), reverse * ((a > b) - (b > a));
+         
+        } 
     }
     $( ".ord_tipo" ).click(function() {
         var datose =JSON.parse(localStorage.getItem('ocurrenciaslist'));
         datose.sort(sort_by('tipo', false, function(a){return a.toUpperCase()}));
         llenar_tabla(datose);
-        console.log(datose);
+        //console.log(datose);
     });
     $( ".ord_fecha" ).click(function() {
         var datose =JSON.parse(localStorage.getItem('ocurrenciaslist'));
         datose.sort(sort_by('fecha', false, function(a){return a.toUpperCase()}));
         llenar_tabla(datose);
-        console.log(datose);
+        //console.log(datose);
     });
 
     $( ".ord_estado" ).click(function() {
