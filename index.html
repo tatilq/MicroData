@@ -12,10 +12,40 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<title>Document</title>
 	
-</heiad>
+</head>
 <body>
 	<!--AQUI EL CODIGO-->
-	
+    <section>
+       <div id="wrap"> 
+        <form action="" id="userform" onsubmit="return false;">
+            <fieldset>
+                <legend>Solicitud de Movimiento de Personal!</legend>
+                <label >Seleccione una ocurrencia</label>
+                <select class="form-control" id="ocurrencia" name='ocurrencia'>
+                <option value="">Seleccione</option>
+                <option value="01">Comisiones por Servicio</option>
+                <option value="02">Descanso Médico</option>
+                <option value="03">Capacitaciones</option>
+                <option value="04">Falta injustificada (permisos personales)</option>
+                <option value="05">Permisos Essalud</option>
+                <option value="06">Vacaciones</option>
+                <option value="07">Licencia por fallecimiento</option>            
+                </select>
+                <br/>
+                <label for="date">Fecha/Hora Salida:</label>
+                <input class="form-control" type="date" name="fecha" id="fecha-salida"/><br/><br />
+                <label for="date">Fecha/Hora Retorno:</label>
+                <input class="form-control" type="date" name="fecha" id="fecha-retorno"/><br/><br />
+                <label for="date">Motivo:</label>
+                <input class="form-control" type="textarea" name="fecha" id="fecha"/><br/><br />
+                <input type="checkbox" id="compensacion" name='compensacion'/>
+                <label for='compensacion' class="inlinelabel">
+                Por compensación de horas</label><br><br>
+                <input type="button" id="submit" value="Enviar">
+            </fieldset>
+        </form>
+        </div>
+    </section>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 	<script src="js/bootstrap.min.js" type="text/javascript"></script>
 	<script src="js/main.js" type="text/javascript"></script>
