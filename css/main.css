@@ -1,3 +1,68 @@
+/****/
+header p {
+    font-size: 12px;
+        margin: 0 13px;
+}
+header a {
+    text-decoration: none;
+}
+.user-photo {
+    margin:0 15px;
+    width: 100%;
+}
+
+.user-photo img {
+    border-radius: 100%;    
+    width:70px;
+    height:70px;
+}
+
+.img-logo {
+    width:20%;
+}
+
+
+.navbar-logo {
+   margin-top: 10px;
+}
+
+.navbar-header {
+   margin-top: 10px;
+}
+.navbar-collapse {
+    position: absolute;
+    top:30px;
+    right: 40px;
+    padding-left: 95px;
+}
+
+@media (max-width: 767px) {
+    .navbar-collapse {
+        position: relative;
+        padding-bottom: 15px;
+        margin-top: -15px;
+    }
+    
+    .user-photo img {
+        border-radius: 100%;    
+        width:45px;
+        height:45px;
+        margin-right:-10px;
+    }
+    
+    .img-logo {
+    width:33%;
+    }
+    
+    header p {
+    font-size: 10px;
+    margin: 0 10px;
+    }
+
+}
+
+/***/
+
 /****ESTILOS DEL FRMULARIO***/
 form
 {
